@@ -48,6 +48,8 @@ public class CpcCompteComptableRest {
 	}
 	@GetMapping("/find/{numero}")
 	public List<CpcCompteComptableVo> find(@PathVariable int numero) {
+		cpcCompteComptableConverter.setCompteComptable(true);
+		cpcCompteComptableConverter.setCpcSousClasse(false);
 		return cpcCompteComptableConverter.toVo(cpcCompteComptableService.find(numero));
 	}
 
