@@ -23,7 +23,6 @@ import com.zsmart.accountingProject.service.facade.OperationComptableService;
 import com.zsmart.accountingProject.service.util.SearchUtil;
 
 @Service
-
 public class CpcCompteComptableServiceImpl implements CpcCompteComptableService {
 
 	@Autowired
@@ -56,8 +55,8 @@ public class CpcCompteComptableServiceImpl implements CpcCompteComptableService 
 	}
 
 	@Override
-	public List<CpcCompteComptable> find() {
-		return cpccomptecomptableDao.find();
+	public List<CpcCompteComptable> find(int numeroSousClasse) {
+		return cpccomptecomptableDao.find(numeroSousClasse);
 	}
 
 	private List<CpcCompteComptable> constructCpcCompteComptable(List<Object[]> cpcCompteComptableCruds) {

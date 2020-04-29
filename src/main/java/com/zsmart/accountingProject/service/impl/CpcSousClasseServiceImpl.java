@@ -73,8 +73,8 @@ public class CpcSousClasseServiceImpl implements CpcSousClasseService {
 	}
 
 	@Override
-	public List<CpcSousClasse> findAllCpcSousClasse() {
-		return cpcsousclasseDao.findAllCpcSousClasse();
+	public List<CpcSousClasse> findAllCpcSousClasse(int numeroSousClasse) {
+		return cpcsousclasseDao.findAllCpcSousClasse(numeroSousClasse);
 	}
 
 	private List<CpcSousClasse> constructCpcSousClasseComptable(List<Object[]> cpcCompteComptableCruds, Date dateDebut,

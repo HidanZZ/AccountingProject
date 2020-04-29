@@ -23,9 +23,9 @@ import org.springframework.stereotype.Repository;
 	 public int deleteBySousClasseComptable(SousClasseComptable sousClasseComptable);
 	 public int deleteByCpc(Cpc cpc);
 	 public int deleteByCpcId (Long id);
-	 @Query("SELECT NEW com.zsmart.accountingProject.bean.CpcSousClasse(c.compteComptable.sousClasseComptable,SUM(c.montant)) FROM CpcCompteComptable c " +
-			 "WHERE c.compteComptable.sousClasseComptable.numero=:numeroSousClasse" +
-			 " GROUP BY c.compteComptable.sousClasseComptable ")
+	 @Query("SELECT NEW com.zsmart.accountingProject.bean.CpcSousClasse(o.compteComptable.sousClasseComptable,SUM(o.montant)) FROM OperationComptable  o " +
+			 "WHERE o.compteComptable.code LIKE :numeroSousClasse% GROUP BY o.compteComptable.code"
+			 )
 	 public List<CpcSousClasse> findAllCpcSousClasse(@Param("numeroSousClasse") int numeroSousClasse);
 
 

@@ -21,7 +21,8 @@ import java.util.List;
 	 public int deleteByCompteComptable(CompteComptable compteComptable);
 	 public int deleteByCpcSousClasse(CpcSousClasse cpcSousClasse);
 	 public int deleteByCpcSousClasseCpcId (Long id);
-	 @Query("SELECT NEW com.zsmart.accountingProject.bean.CpcCompteComptable(o.compteComptable,SUM(o.montant)) FROM OperationComptable o WHERE o.compteComptable.code LIKE :numerClasse% GROUP BY o.compteComptable")
-	 public List<CpcCompteComptable> find(@Param("numeroClasse") int numerClasse);
+	 @Query("SELECT NEW com.zsmart.accountingProject.bean.CpcCompteComptable(o.compteComptable,SUM(o.montant)) FROM OperationComptable o" +
+			 " WHERE o.compteComptable.code LIKE :numeroClasse% GROUP BY o.compteComptable")
+	 public List<CpcCompteComptable> find(@Param("numeroClasse") int numeroClasse);
 
 }

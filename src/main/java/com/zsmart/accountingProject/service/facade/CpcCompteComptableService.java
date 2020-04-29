@@ -31,5 +31,5 @@ public interface CpcCompteComptableService {
 
 	List<CpcCompteComptable> findCpcCompteComptable(Date dateDebut, Date dateFin, int codeSousClasseComptable);
 
-	public  List<CpcCompteComptable> find();
+	public  List<CpcCompteComptable> find(int numeroSousClasse);
 }
