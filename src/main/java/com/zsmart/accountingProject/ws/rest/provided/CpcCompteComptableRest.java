@@ -46,6 +46,10 @@ public class CpcCompteComptableRest {
 	public List<CpcCompteComptableVo> findAll() {
 		return cpcCompteComptableConverter.toVo(cpcCompteComptableService.findAll());
 	}
+	@GetMapping("/find")
+	public List<CpcCompteComptableVo> find() {
+		return cpcCompteComptableConverter.toVo(cpcCompteComptableService.find());
+	}
 
 	public CpcCompteComptableConverter getCpcCompteComptableConverter() {
 		return cpcCompteComptableConverter;

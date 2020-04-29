@@ -41,7 +41,10 @@ cpcSousClasseService.deleteById(id);
 public List<CpcSousClasseVo> findAll(){
 return cpcSousClasseConverter.toVo(cpcSousClasseService.findAll());
 }
-
+@GetMapping("/findAllCpcSousClasse")
+public List<CpcSousClasseVo> findAllCpcSousClasse(){
+  return cpcSousClasseConverter.toVo(cpcSousClasseService.findAllCpcSousClasse());
+ }
  public CpcSousClasseConverter getCpcSousClasseConverter(){
 return cpcSousClasseConverter;
 }
