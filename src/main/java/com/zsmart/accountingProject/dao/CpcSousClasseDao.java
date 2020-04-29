@@ -5,8 +5,10 @@ import com.zsmart.accountingProject.bean.CpcSousClasse;
 
 import java.util.List;
 
+import org.hibernate.annotations.Parameter;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 
@@ -22,9 +24,9 @@ import org.springframework.stereotype.Repository;
 	 public int deleteByCpc(Cpc cpc);
 	 public int deleteByCpcId (Long id);
 	 @Query("SELECT NEW com.zsmart.accountingProject.bean.CpcSousClasse(c.compteComptable.sousClasseComptable,SUM(c.montant)) FROM CpcCompteComptable c " +
-			 "WHERE c.compteComptable.sousClasseComptable.numero=6 or c.compteComptable.sousClasseComptable.numero=7" +
+			 "WHERE c.compteComptable.sousClasseComptable.numero=:numeroSousClasse" +
 			 " GROUP BY c.compteComptable.sousClasseComptable ")
-	 public List<CpcSousClasse> findAllCpcSousClasse();
-	
+	 public List<CpcSousClasse> findAllCpcSousClasse(@Param("numeroSousClasse") int numeroSousClasse);
+
 
 }
