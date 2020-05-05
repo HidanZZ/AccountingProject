@@ -50,6 +50,7 @@ public class CpcCompteComptableRest {
 	public List<CpcCompteComptableVo> find(@PathVariable int numero) {
 		cpcCompteComptableConverter.setCompteComptable(true);
 		cpcCompteComptableConverter.setCpcSousClasse(false);
+		cpcCompteComptableConverter.getCompteComptableConverter().setSousClasseComptable(true);
 		return cpcCompteComptableConverter.toVo(cpcCompteComptableService.find(numero));
 	}
 

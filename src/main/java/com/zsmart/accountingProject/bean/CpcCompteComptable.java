@@ -18,7 +18,6 @@ public class CpcCompteComptable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @JsonProperty(access = Access.WRITE_ONLY)
     @ManyToOne
     private CompteComptable compteComptable;
     @Column(precision = 16, scale = 4)
